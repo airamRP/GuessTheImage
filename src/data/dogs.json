@@ -1,0 +1,12 @@
+[
+  { "imageUrl": "/data/images/afgano.jpg", "answer": "Afgano" },
+  { "imageUrl": "/data/images/akita.jpg", "answer": "Akita" },
+  { "imageUrl": "/data/images/basenji.jpg", "answer": "Basenji" },
+  { "imageUrl": "/data/images/beagle.jpg", "answer": "Beagle" },
+  { "imageUrl": "/data/images/boxer.jpg", "answer": "Boxer" },
+  { "imageUrl": "/data/images/breton.jpg", "answer": "Bretoón" },
+  { "imageUrl": "/data/images/buhund-noruego.jpg", "answer": "Buhound Noruego" },
+  { "imageUrl": "/data/images/bull-terrier.jpg", "answer": "Bull Terrier" },
+  { "imageUrl": "/data/images/bulldog-frances.jpg", "answer": "Bulldog Francés" },
+  { "imageUrl": "/data/images/bulldog.jpg", "answer": "Bulldog" }
+]
