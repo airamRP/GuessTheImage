@@ -1,4 +1,6 @@
 // src/components/ItemCard.jsx
+import './ItemCard.css'
+import { memo } from 'react';
 function ItemCard({ imageUrl, attempts, index, gameStatus }) {
   return (
     <div className="image-card">
@@ -15,4 +17,4 @@ function ItemCard({ imageUrl, attempts, index, gameStatus }) {
   );
 }
 
-export default ItemCard;
+export default memo(ItemCard);

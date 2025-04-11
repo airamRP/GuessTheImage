@@ -1,0 +1,67 @@
+.image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.item-image:hover {
+  transform: scale(1.08);
+}
+
+.guess {
+  margin-top: 12px;
+  padding: 8px 15px;
+  border: 2px solid transparent;
+  min-width: 120px;
+  text-align: center;
+  font-size: 1.1em;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+.guess.correct {
+  border-color: #28a745;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.guess.misplaced {
+  border-color: #d4a017;
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.guess.wrong {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .item-image {
+    width: 150px;
+    height: 150px;
+  }
+  .guess {
+    min-width: 100px;
+    font-size: 1em;
+  }
+}

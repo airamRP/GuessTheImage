@@ -1,14 +1,19 @@
 // src/components/OptionSelector.jsx
+import { memo } from 'react';
+import './OptionSelector.css';
+
 function OptionSelector({ options, onSelect, disabled }) {
   return (
     <div className="option-selector">
-      {options.map((option) => (
-        <button key={option} onClick={() => onSelect(option)} disabled={disabled}>
-          {option}
-        </button>
-      ))}
+      <div className="options">
+        {options.map((option) => (
+          <button key={option} onClick={() => onSelect(option)} disabled={disabled}>
+            {option}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
 
-export default OptionSelector;
+export default memo(OptionSelector);

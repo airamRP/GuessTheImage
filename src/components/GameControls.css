@@ -1,0 +1,83 @@
+/* src/components/GameControls.css */
+.game-controls {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  align-items: center;
+}
+
+.game-controls button {
+  padding: 12px 30px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-controls button:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.game-controls .undo { /* Borrar última */
+  background-color: #ff4444;
+}
+
+.game-controls .undo:hover:not(:disabled) {
+  background-color: #cc0000;
+}
+
+.game-controls button:disabled {
+  background-color: #b0a8a0;
+  cursor: not-allowed;
+}
+
+.game-controls select {
+  padding: 8px 15px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #4a3f35;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.game-controls p {
+  font-size: 1.3em;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #28a745; /* Ganaste */
+}
+
+.game-controls p.lose {
+  color: #dc3545; /* Perdiste */
+}
+
+@media (max-width: 768px) {
+  .game-controls {
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .game-controls button {
+    padding: 12px 30px;
+    flex: auto;
+  }
+  .game-controls select {
+    padding: 8px 15px;
+    flex: auto;
+  }
+}

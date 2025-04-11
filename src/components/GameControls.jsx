@@ -1,17 +1,32 @@
 // src/components/GameControls.jsx
-function GameControls({ onCheck, onReset, onRetry, canCheck, canRetry, gameStatus, attemptsLeft }) {
+import './GameControls.css';
+import { gameConfig } from '../config/gameConfig';
+
+const { THEMES, THEME_LABELS } = gameConfig;
+
+function GameControls({ onReset, onRemoveLast, onThemeChange, gameStatus, currentGuesses, currentTheme }) {
+  const themes = Object.values(THEMES);
+
   return (
     <div className="game-controls">
-      <button onClick={onCheck} disabled={!canCheck || gameStatus !== 'playing'}>Comprobar</button>
-      {canRetry && (
-        <button onClick={onRetry} disabled={gameStatus !== 'checked' || attemptsLeft === 0}>Intentar de nuevo</button>
+      {gameStatus === 'won' && <p>¡Ganaste!</p>}
+      {gameStatus === 'lost' && <p className="lose">Perdiste. ¡Intenta de nuevo!</p>}
+
+      {gameStatus === 'playing' && currentGuesses.length > 0 && (
+        <button className='undo' onClick={onRemoveLast}>Deshacer</button>
       )}
-      <button onClick={onReset}>Jugar de nuevo</button>
-      {gameStatus === 'won' && <p className="message win">¡Has ganado!</p>}
-      {gameStatus === 'checked' && attemptsLeft > 0 && (
-        <p className="message">Te quedan {attemptsLeft} intento{attemptsLeft > 1 ? 's' : ''}</p>
-      )}
-      {gameStatus === 'lost' && <p className="message lose">Has perdido</p>}
+      <button onClick={onReset}>Reiniciar</button>
+      <select
+        value={currentTheme}
+        onChange={(e) => onThemeChange(e.target.value)}
+      >
+        {themes.map((theme) => (
+          <option key={theme} value={theme}>
+            {THEME_LABELS[theme]}
+          </option>
+        ))}
+      </select>
+      
     </div>
   );
 }
