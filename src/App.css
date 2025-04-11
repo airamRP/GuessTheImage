@@ -17,9 +17,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* necesario? */
   overflow-y: auto;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 .image-grid {
@@ -27,9 +26,18 @@
   flex: auto;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Permite que las imágenes se envuelvan en varias filas */
   gap: 10px;
-  /* necesario? */
 }
+
+/* Ajuste para pantallas intermedias (tablets) */
+/* @media (max-width: 1000px) and (min-width: 769px) {
+  .image-grid {
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
+  }
+} */
 
 @media (max-width: 768px) {
   .game {

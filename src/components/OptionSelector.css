@@ -1,20 +1,18 @@
 /* src/components/OptionSelector.css */
 .option-selector {
-  /* position: fixed;
-  bottom: 60px;
-  left: 0;
-  right: 0; */
+  
   /* width: 100%; */ /* Todo el ancho */
   /* max-width: 1200px; */
   max-width: 100vw;
-/*   margin: 0 auto; */
+   margin: 0 auto; 
   /* padding: 10px; */
 }
 
 .options {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
-  
   padding: 10px;
   /* overflow-x: auto; */
   /* width: 100%;
@@ -23,13 +21,10 @@
 
 .options button {
   padding: 12px 25px;
-  /* padding: 12px 0; */
   border: none;
   border-radius: 25px;
-  
   background-color: #8b5e3c;
   color: white;
-  /* color: rgb(75, 75, 75); */
   font-size: 1em;
   font-weight: 600;
   cursor: pointer;
